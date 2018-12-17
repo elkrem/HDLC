@@ -1,0 +1,29 @@
+{
+  "name": "hdlc",
+  "version": "1.0.0",
+  "description": "HDLC is a Simple NodeJS HDLC library.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elkrem/HDLC.git"
+  },
+  "keywords": [
+    "HDLC",
+    "nodejs"
+  ],
+  "author": "Shady Amir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaW-/hdlc/issues"
+  },
+  "homepage": "https://github.com/SaW-/hdlc#readme",
+  "dependencies": {
+    "crc": "^3.8.0"
+  },
+  "devDependencies": {}
+}
