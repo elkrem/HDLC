@@ -1,5 +1,5 @@
 const assert = require("assert");
-const hdlc = require('../index');
+import {HDLC} from "../index"
 
 var messageType = 4;
 var message;
@@ -9,9 +9,11 @@ var messageFrameCount = 0;
 
 describe("Testing HDCL", () => {
   it("should encode msg into frame", () => {
+    const hdlc = new HDLC();
+
     hdlc.init(sendbyte);
 
-    var messageBytes = message ? Array.from(message) : [];
+    var messageBytes = message ? Array(message) : [];
     messageBytes.unshift(messageType);
     
     hdlc.sendFrame(messageBytes);
@@ -19,14 +21,15 @@ describe("Testing HDCL", () => {
   });
 
   it("should decode frame into msg", () => {
-    hdlc.on('newFrame', router);
+    const hdlc = new HDLC();
+    hdlc.eventEmitter.on('newFrame', router);
     hdlc.byteReceiver(messageFrame);
   });
 });
 
 function sendbyte(data) {
-  dataBuffer = Buffer.from([data]);
-  messageFrameBuffer = Buffer.from([messageFrame[messageFrameCount]]);
+  const dataBuffer = Buffer.from([data]);
+  const messageFrameBuffer = Buffer.from([messageFrame[messageFrameCount]]);
   assert.deepEqual(dataBuffer,messageFrameBuffer);
   messageFrameCount++;
 }
