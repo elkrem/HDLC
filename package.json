@@ -1,11 +1,10 @@
 {
   "name": "hdlc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HDLC is a Simple NodeJS HDLC library.",
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc index.ts",
     "test": "mocha --require ts-node/register test/test.ts"
   },
   "repository": {
