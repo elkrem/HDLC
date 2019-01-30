@@ -10,13 +10,14 @@ $ npm install HDLC
 ### Usage
 import HDLC
 ```
-const hdlc = require('hdlc');
+import { HDLC } from "hdlc";
+const hdlc = new HDLC();
 ```
 
 Initialize 
 ```
 hdlc.init(sendbyte);
-hdlc.on('newFrame', router);
+hdlc.eventEmitter.on('newFrame', router);
 
 function sendbyte(data) {
   console.log(data);
