@@ -12,6 +12,7 @@ var HDLC = /** @class */ (function () {
         this.eventEmitter = new EventEmitter();
         this.byteSendingFunction = function (byte) { };
     }
+    HDLC.prototype.HDLC = function () { };
     HDLC.prototype.init = function (byteSendingFunction) {
         this.byteSendingFunction = byteSendingFunction;
         this.pendingFrame.framePosition = 0;

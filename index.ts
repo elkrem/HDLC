@@ -10,6 +10,8 @@ class HDLC {
     public eventEmitter = new EventEmitter();
     public byteSendingFunction = (byte) => {};
 
+    public HDLC(){}
+
     public init(byteSendingFunction) {
         this.byteSendingFunction = byteSendingFunction;
         this.pendingFrame.framePosition = 0;
