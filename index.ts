@@ -86,13 +86,13 @@ class HDLC {
             this.sendchar(byte);
         }
 
-        byte = fcs;
+        byte = Buffer.from([fcs]).readInt8(0);
         if ((byte === CONTROL_ESCAPE_OCTET) || (byte === FRAME_BOUNDARY_OCTET)) {
             this.sendchar(CONTROL_ESCAPE_OCTET);
             byte ^= INVERT_OCTET;
         }
         this.sendchar(byte);
-        byte = fcs >> 8;
+        byte = Buffer.from([fcs >> 8]).readInt8(0);
         if ((byte === CONTROL_ESCAPE_OCTET) || (byte === FRAME_BOUNDARY_OCTET)) {
             this.sendchar(CONTROL_ESCAPE_OCTET);
             byte ^= INVERT_OCTET;

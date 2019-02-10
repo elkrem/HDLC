@@ -1,6 +1,6 @@
 {
   "name": "hdlc",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "HDLC is a Simple NodeJS HDLC library.",
   "main": "index.js",
   "scripts": {
